@@ -604,6 +604,13 @@ ul.sociallinks li a.diaspora {
 	background:url(images/posticons.png) 0 -58px no-repeat;
 	padding:4px 0 4px 18px;
 }
+#content ul.entry-meta li.category-badge {
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+}
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /*	Post Categories / Tags / Edit

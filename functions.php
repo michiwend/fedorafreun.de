@@ -1047,15 +1047,31 @@ class nilmini_video extends WP_Widget {
 
 		<?php
 	}
-} 
+}
 
-function show_category_badge($category){
-  switch($category) {
-    case "Anleitung":
-      $category_image = "/images/category_badges/howto.png";
-      break;
+# Funktion, die Kategorie-Icons für fedorafreun.de erzeugt
+function show_category_badge(){
+
+  $categories=get_the_category();
+  $img_folder=get_site_url()."/wp-content/themes/nilmini/images/category_badges/";
+  
+  foreach($categories as $cat){
+    $cat_name=$cat->cat_name;
+    switch($cat_name) {
+      case "HowTo":
+        $cat_image = $img_folder."howto.png";
+        break;
+      case "News":
+        $cat_image = $img_folder."news.png";
+        break;
+      default:
+        $cat_image = "";
+    }
+    if($cat_image){
+      echo "<li class=\"category-badge\" ><img src=\"".$cat_image."\" alt=\"Kategorie-Icon\" title=\"Dieser Artikel gehört zur Kategorie: ".$cat_name."\" /></li>\n";
+      #echo "<img src=\"".$cat_image."\" alt=\"Kategorie-Icon\" title=\"Dieser Artikel gehört zur Kategorie: ".$cat_name."\" />\n";
+    }
   }
-  return $category_image
 }
 
 register_widget('nilmini_video');

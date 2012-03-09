@@ -17,7 +17,9 @@
 				<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'nilmini' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			</header><!--end entry-header -->
 			
-			<ul class="entry-meta">	
+			<ul class="entry-meta">
+			  <!-- Kategorie-Icons erzeugen -->
+		    <?php show_category_badge(); ?>
 				<li class="post-date"><a href="<?php the_permalink(); ?>" title="<?php _e( 'Permalink', 'nilmini' ); ?>"><?php echo get_the_date(); ?></a></li>
 				<li class="post-author"><?php _e('Posted by', 'nilmini') ?> <?php the_author_posts_link(); ?></li>
 				<li class="comments-count"><?php comments_popup_link( __( '0 comments', 'nilmini' ), __( '1 comment', 'nilmini' ), __( '% comments', 'nilmini' ), 'comments-link', __( 'comments off', 'nilmini' ) ); ?></li>

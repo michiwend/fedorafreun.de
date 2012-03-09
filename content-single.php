@@ -16,7 +16,8 @@
 		</header><!--end entry-header -->
 	
 		<ul class="entry-meta">
-		    <li class="" ><?php show_category_badge(the_category( ', ' );) ?></li>
+        <!-- Kategorie-Icons erzeugen -->
+		    <?php show_category_badge(); ?>
 				<li class="post-date"><a href="<?php the_permalink(); ?>" title="<?php _e( 'Permalink', 'nilmini' ); ?>"><?php echo get_the_date(); ?></a></li>
 				<li class="post-author"><?php _e('Posted by', 'nilmini') ?> <?php the_author_posts_link(); ?></li>
 				<li class="comments-count"><?php comments_popup_link( __( '0 comments', 'nilmini' ), __( '1 comment', 'nilmini' ), __( '% comments', 'nilmini' ), 'comments-link', __( 'comments off', 'nilmini' ) ); ?></li>
