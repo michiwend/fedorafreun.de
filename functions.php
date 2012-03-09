@@ -1049,4 +1049,13 @@ class nilmini_video extends WP_Widget {
 	}
 } 
 
+function show_category_badge($category){
+  switch($category) {
+    case "Anleitung":
+      $category_image = "/images/category_badges/howto.png";
+      break;
+  }
+  return $category_image
+}
+
 register_widget('nilmini_video');
